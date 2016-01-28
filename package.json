@@ -4,7 +4,7 @@
   "description": "Add Gulp to your MJML workflow",
   "main": "src/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Guillaume Badi <gbadi@mailjet.com> (http://github.com/GuillaumeBadi)",
   "license": "MIT",
