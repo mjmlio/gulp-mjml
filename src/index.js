@@ -1,6 +1,6 @@
 
 var through = require ('through2')
-  , mjmlDefaultEngine = require ('mjml').default
+  , mjmlDefaultEngine = require ('mjml')
   , gutil = require ('gulp-util');
 
 var GulpError = gutil.PluginError,
