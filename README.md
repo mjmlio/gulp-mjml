@@ -13,7 +13,7 @@ var gulp = require('gulp');
 var mjml = require('gulp-mjml')
 
 gulp.task('default', function () {
-  gulp.src('./test.mjml')
+  return gulp.src('./test.mjml')
     .pipe(mjml())
     .pipe(gulp.dest('./html'))
 });
@@ -32,7 +32,7 @@ var mjml = require('gulp-mjml')
 var mjmlEngine = require('mjml')
 
 gulp.task('default', function () {
-  gulp.src('./test.mjml')
+  return gulp.src('./test.mjml')
     .pipe(mjml(mjmlEngine))
     .pipe(gulp.dest('./html'))
 });
