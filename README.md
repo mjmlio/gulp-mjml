@@ -10,12 +10,12 @@ Add Gulp to your MJML workflow!
 ``` javascript
 
 var gulp = require('gulp');
-var mjml = require('gulp-mjml')
+var mjml = require('gulp-mjml');
 
 gulp.task('default', function () {
   return gulp.src('./test.mjml')
     .pipe(mjml())
-    .pipe(gulp.dest('./html'))
+    .pipe(gulp.dest('./html'));
 });
 
 ```
@@ -25,16 +25,16 @@ gulp.task('default', function () {
 ``` javascript
 
 var gulp = require('gulp');
-var mjml = require('gulp-mjml')
+var mjml = require('gulp-mjml');
 
 // Require your own components if needed, and your mjmlEngine
 // require('./components')
-var mjmlEngine = require('mjml')
+var mjmlEngine = require('mjml');
 
 gulp.task('default', function () {
   return gulp.src('./test.mjml')
     .pipe(mjml(mjmlEngine))
-    .pipe(gulp.dest('./html'))
+    .pipe(gulp.dest('./html'));
 });
 
 ```
