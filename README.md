@@ -27,13 +27,13 @@ gulp.task('default', function () {
 var gulp = require('gulp')
 var mjml = require('gulp-mjml')
 
-// Require your own components if needed, and your mjmlEngine
+// Require your own components if needed, and your mjmlEngine (possibly with options)
 // require('./components')
 var mjmlEngine = require('mjml')
 
 gulp.task('default', function () {
   return gulp.src('./test.mjml')
-    .pipe(mjml(mjmlEngine))
+    .pipe(mjml(mjmlEngine, {minify: true}))
     .pipe(gulp.dest('./html'))
 })
 
