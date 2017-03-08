@@ -5,9 +5,12 @@ var gutil = require ('gulp-util')
 var GulpError = gutil.PluginError
 var NAME = 'MJML'
 
-module.exports = function mjml (mjmlEngine) {
+module.exports = function mjml (mjmlEngine, options) {
   if(mjmlEngine === undefined) {
     mjmlEngine = mjmlDefaultEngine
+  }
+  if (options === undefined) {
+    options = {}
   }
 
   return through.obj(function (file, enc, callback) {
@@ -22,7 +25,7 @@ module.exports = function mjml (mjmlEngine) {
       var render
 
       try {
-        render = mjmlEngine.mjml2html(file.contents.toString())
+        render = mjmlEngine.mjml2html(file.contents.toString(), options)
       } catch (e) {
         this.emit('error', new GulpError(NAME, e))
         return callback()
