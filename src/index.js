@@ -14,6 +14,12 @@ module.exports = function mjml (mjmlEngine, options) {
   }
 
   return through.obj(function (file, enc, callback) {
+    // Not a big fan of this deep copy methods
+    // But it will work regardless of Node version
+    var localOptions = JSON.parse(JSON.stringify(options))
+    if (localOptions.filePath === undefined) {
+      localOptions.filePath = file.path.toString()
+    }
 
     if (file.isStream()) {
       this.emit('error', new GulpError(NAME, 'Streams are not supported!'))
