@@ -11,7 +11,7 @@
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
-    "mjml": "^3.0.0",
+    "mjml": "^3.3.0",
     "through2": "^2.0.0"
   }
 }
