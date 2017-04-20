@@ -5,6 +5,15 @@ var gutil = require ('gulp-util')
 var GulpError = gutil.PluginError
 var NAME = 'MJML'
 
+function error (file) {
+  return function (message) {
+    return new GulpError(
+      NAME,
+      'Error in file ' + file + ': ' + message
+    )
+  }
+}
+
 module.exports = function mjml (mjmlEngine, options) {
   if(mjmlEngine === undefined) {
     mjmlEngine = mjmlDefaultEngine
@@ -14,6 +23,7 @@ module.exports = function mjml (mjmlEngine, options) {
   }
 
   return through.obj(function (file, enc, callback) {
+
     // Not a big fan of this deep copy methods
     // But it will work regardless of Node version
     var localOptions = JSON.parse(JSON.stringify(options))
@@ -21,8 +31,10 @@ module.exports = function mjml (mjmlEngine, options) {
       localOptions.filePath = file.path.toString()
     }
 
+    const raise = error(localOptions.filePath)
+
     if (file.isStream()) {
-      this.emit('error', new GulpError(NAME, 'Streams are not supported!'))
+      this.emit('error', raise('Streams are not supported!'))
       return callback()
     }
 
@@ -33,7 +45,7 @@ module.exports = function mjml (mjmlEngine, options) {
       try {
         render = mjmlEngine.mjml2html(file.contents.toString(), options)
       } catch (e) {
-        this.emit('error', new GulpError(NAME, e))
+        this.emit('error', raise(e.message))
         return callback()
       }
 
