@@ -6,7 +6,7 @@ var GulpError = gutil.PluginError
 var NAME = 'MJML'
 
 module.exports = function mjml (mjmlEngine, options) {
-  if(mjmlEngine === undefined) {
+  if(!mjmlEngine) {
     mjmlEngine = mjmlDefaultEngine
   }
   if (options === undefined) {
