@@ -9,9 +9,9 @@
   "author": "Guillaume Badi <gbadi@mailjet.com> (http://github.com/GuillaumeBadi)",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-util": "^3.0.7",
-    "mjml": "^3.3.2",
-    "through2": "^2.0.0"
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "mjml": "^3.3.3",
+    "through2": "^2.0.3"
   }
 }
