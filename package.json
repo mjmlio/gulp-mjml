@@ -1,6 +1,6 @@
 {
   "name": "gulp-mjml",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Add Gulp to your MJML workflow",
   "main": "src/index",
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
-    "mjml": "^3.3.2",
+    "mjml": "^3.3.5",
     "through2": "^2.0.0"
   }
 }
