@@ -43,7 +43,7 @@ module.exports = function mjml (mjmlEngine, options) {
       var render
 
       try {
-        render = mjmlEngine.mjml2html(file.contents.toString(), localOptions)
+        render = mjmlEngine(file.contents.toString(), localOptions)
       } catch (e) {
         this.emit('error', raise(e.message))
         return callback()
