@@ -7,12 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Guillaume Badi <gbadi@mailjet.com> (http://github.com/GuillaumeBadi)",
+  "keywords": [
+    "gulpplugin"
+  ],
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.0",
-    "mjml": "^4.0.0",
+    "mjml": "^4.0.5",
     "plugin-error": "^1.0.1",
     "replace-ext": "^1.0.0",
     "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
