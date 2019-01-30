@@ -35,7 +35,7 @@ gulp.task('default', function () {
 })
 ```
 
-> If you'd like to get validation errors and , use `strict` and a custom error handler function:
+> If you'd like to get validation errors and , use `strict` and a custom error handler function. _Note that using `strict` will not render the file in case of error_:
 
 ```javascript
 var gulp = require('gulp')
