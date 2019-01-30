@@ -49,7 +49,8 @@ module.exports = function mjml (mjmlEngine, options) {
         return callback()
       }
 
-      output.contents = new Buffer(render.html)
+      // [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues
+      output.contents = Buffer.from(render.html)
       output.path = replaceExt(file.path.toString(), '.html')
       this.push(output)
     }
