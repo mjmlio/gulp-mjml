@@ -1,8 +1,9 @@
-var gulp = require('gulp')
-var mjml = require('../src/index')
+var gulp = require("gulp");
+var mjml = require("../src/index");
 
-gulp.task('default', function () {
-  gulp.src('./test.mjml')
+gulp.task("default", function() {
+  return gulp
+    .src("./test.mjml")
     .pipe(mjml())
-    .pipe(gulp.dest('./html'))
-})
+    .pipe(gulp.dest("./html"));
+});
