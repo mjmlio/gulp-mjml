@@ -1,6 +1,6 @@
 {
   "name": "gulp-mjml",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Add Gulp to your MJML workflow",
   "main": "src/index",
   "scripts": {
