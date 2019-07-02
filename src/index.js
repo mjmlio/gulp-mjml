@@ -36,7 +36,7 @@ module.exports = function mjml(mjmlEngine, options) {
 
     if (file.isBuffer()) {
       const output = file.clone();
-      const render;
+      let render;
 
       try {
         render = mjmlEngine(file.contents.toString(), localOptions);
