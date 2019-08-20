@@ -47,7 +47,7 @@ module.exports = function mjml(mjmlEngine, options) {
 
       // [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues
       output.contents = Buffer.from(render.html);
-      output.path = replaceExt(file.path.toString(), ".html");
+      output.path = replaceExt(file.path.toString(), localOptions.fileExt || ".html");
       this.push(output);
     }
     return callback();
