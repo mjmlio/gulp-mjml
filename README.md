@@ -55,3 +55,18 @@ gulp.task('default', function () {
     .pipe(gulp.dest('./html'))
 })
 ```
+
+> If you want to override the default file extension that is output use `fileExt`
+
+```javascript
+const gulp = require('gulp')
+const mjml = require('gulp-mjml')
+
+const mjmlEngine = require('mjml')
+
+gulp.task('default', function () {
+  return gulp.src('./test.mjml')
+    .pipe(mjml(mjmlEngine, {minify: true, fileExt: ".txt"}))
+    .pipe(gulp.dest('./html'))
+})
+```
