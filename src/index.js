@@ -29,10 +29,6 @@ module.exports = function mjml(mjmlEngine, options) {
 
     const raise = error(localOptions.filePath);
 
-    if (localOptions.fileExt === undefined) {
-      localOptions.fileExt = ".html";
-    }
-
     if (file.isStream()) {
       this.emit("error", raise("Streams are not supported!"));
       return callback();
@@ -51,7 +47,7 @@ module.exports = function mjml(mjmlEngine, options) {
 
       // [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues
       output.contents = Buffer.from(render.html);
-      output.path = replaceExt(file.path.toString(), localOptions.fileExt);
+      output.path = replaceExt(file.path.toString(), localOptions.fileExt || ".html");
       this.push(output);
     }
     return callback();
